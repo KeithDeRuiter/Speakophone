@@ -1,0 +1,15 @@
+{
+    "sample_directory": "../Samples/DiceRoller/Keith",
+    
+    "intro_phrases": "1_Intros",
+    
+    "number_phrases": "2_Numbers",
+    
+    "d_phrases": "3_Dees",
+    
+    "segue_phrases": "4_Segues",
+    
+    "joining_phrases": "5_Joiners",
+    
+    "outro_phrases": "6_Outros"
+}
