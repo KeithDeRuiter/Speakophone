@@ -6,11 +6,9 @@ Created on Wed Nov 20 18:15:34 2019
 """
 
 import json
-from random import seed
 from random import randint
 from random import choice
 from Speakophone import Speakophone
-import sounddevice as sd
 import numpy as np
 import scipy.io.wavfile as wv
 import os
@@ -35,6 +33,8 @@ def say_number(i):
     Convert an integer into its word representation.
     e.g. 1 becomes "one"
     Supports all numbers up to "-decillions" as well as negatives.
+
+    Sourced from https://stackoverflow.com/questions/19504350/how-to-convert-numbers-to-words-in-python/42555145
 
     Args:
         i (int): The integer to convert to words.
@@ -336,5 +336,5 @@ if __name__== "__main__":
     roller = DiceRoller("../samples/DiceRoller/dice_roller_phrases.json")
     #a = roller.generate_roll_audio(randint(1, 4), choice([2,4,6,8,10,12,20,100]))
     a = roller.generate_roll_audio(2, 20)
-    app.speak_audio(a)
-    #app.speak_audio(a, "your_roll")
+    app.output_audio(a)
+    #app.output_audio(a, "your_roll")
