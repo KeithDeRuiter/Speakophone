@@ -243,9 +243,9 @@ class Speakophone:
         for w in words:
             print("Saying: {0}".format(w))
             try:
-                for phone in cmu_dict[w].split(" "):
-                    print("DictPhone: {0}\tMapPhone: {1}".format(phone, str(allo_map[phone])))
-                    s = sounds[allo_map[phone]]
+                for phone in self.cmu_dict[w].split(" "):
+                    print("DictPhone: {0}\tMapPhone: {1}".format(phone, str(self.allo_map[phone])))
+                    s = self.sounds[self.allo_map[phone]]
                     clips.append(s)
             except KeyError:
                 raise ValueError("The word \"{0}\" is not in the dictionary".format(w))
@@ -300,9 +300,9 @@ def main():
   
     #di_path = os.path.join(directory, dict_filename)
     
-    samp_dir = "../samples/little-scale_SP0256-AL2"
-    dict_file = "../samples/CMU-SphinxDict/cmudict_SPHINX_40.txt"
-    map_file = "../samples/CMU-SphinxDict/SphinxPhones_40__C64_mapping.txt"
+    samp_dir = "../Samples/Keith-AllophonesWords-v2"
+    dict_file = "../Samples/CMU-SphinxDict/cmudict_SPHINX_40.txt"
+    map_file = "../Samples/Keith-AllophonesWords-v2/SphinxPhones_40__Keith_mapping.txt"
     
     app = Speakophone(sample_dir=samp_dir,
                       dict_file_path=dict_file,
@@ -333,12 +333,7 @@ def main():
     
     print("Goodbye")
     
-        
 
-
-sounds = load_samples("../samples/little-scale_SP0256-AL2")
-cmu_dict = load_cmu_dict("../samples/CMU-SphinxDict/cmudict_SPHINX_40.txt")
-allo_map = load_allophone_map("../samples/CMU-SphinxDict/SphinxPhones_40__C64_mapping.txt")
 
 
 if __name__== "__main__":
